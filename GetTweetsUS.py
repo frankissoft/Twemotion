@@ -6,10 +6,10 @@ import json
 import csv
 
 
-consumer_key = 'mbl6Q3aBRRza7uiQyWEzAqSco'
-consumer_secret = 'UGH3ynJusNDiK1TECBUnfZo0iuJfYyedEMA6HYJ6eqNKINJWkJ'
-access_token = '1157709279379386368-UPh9LIvUHVHlpWwrm1l4m48H9fvHTN'
-access_secret = 'rYdzATZpZn2R7th9I0j8uzhs0oFE8LCfE1SClJvoayjh2'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_secret = ''
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)

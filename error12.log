@@ -1,0 +1,66 @@
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Error on_data: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/http/client.py", line 554, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+  File "/usr/lib64/python3.7/http/client.py", line 521, in _read_next_chunk_size
+    return int(line, 16)
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.7/http/client.py", line 586, in _readinto_chunked
+    chunk_left = self._get_chunk_left()
+  File "/usr/lib64/python3.7/http/client.py", line 556, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/urllib3/response.py", line 425, in _error_catcher
+    yield
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/urllib3/response.py", line 507, in read
+    data = self._fp.read(amt) if not fp_closed else b""
+  File "/usr/lib64/python3.7/http/client.py", line 457, in read
+    n = self.readinto(b)
+  File "/usr/lib64/python3.7/http/client.py", line 491, in readinto
+    return self._readinto_chunked(b)
+  File "/usr/lib64/python3.7/http/client.py", line 602, in _readinto_chunked
+    raise IncompleteRead(bytes(b[0:total_bytes]))
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "GetTweetsUS.py", line 60, in <module>
+    twitter_stream.filter(locations=[-125.1032803826,25.1247457393,-66.7383322529,48.9812801846])
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tweepy/streaming.py", line 474, in filter
+    self._start(is_async)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tweepy/streaming.py", line 389, in _start
+    self._run()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tweepy/streaming.py", line 320, in _run
+    six.reraise(*exc_info)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/six.py", line 693, in reraise
+    raise value
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tweepy/streaming.py", line 289, in _run
+    self._read_loop(resp)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tweepy/streaming.py", line 339, in _read_loop
+    line = buf.read_line()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/tweepy/streaming.py", line 200, in read_line
+    self._buffer += self._stream.read(self._chunk_size)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/urllib3/response.py", line 529, in read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+  File "/usr/lib64/python3.7/contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/urllib3/response.py", line 443, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ('Connection broken: IncompleteRead(0 bytes read)', IncompleteRead(0 bytes read))

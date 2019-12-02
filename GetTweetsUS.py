@@ -34,7 +34,7 @@ class MyListener(StreamListener):
             #  G   f.write(data)
             #     f.write(',')
             #     return True
-            with open('GetTweetUS_attr.csv', mode='a') as csv_file:
+            with open('GetTweetUS_attr14.csv', mode='a') as csv_file:
                 data = json.loads(data)
                 csv_file_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 csv_file_writer.writerow([data["created_at"], data["id_str"], data["text"],
